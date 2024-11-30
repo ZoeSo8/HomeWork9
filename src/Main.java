@@ -2,14 +2,54 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+//Задача 1
+//Бухгалтеры попросили посчитать сумму всех выплат за месяц.
+//Создайте массив с пятью целочисленными элементами и задайте каждому элементу значение.
+//Напишите программу, которая решит эту задачу, и выведите в консоль результат в формате:
+//«Сумма трат за месяц составила … рублей».
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        int [] payment = {1000,15_500,38_500,77_000,145_000};
+        int summ = 0;
+        for (int element : payment) {
+            summ += element;}
+            System.out.println("Сумма трат за месяц составила " + summ + "рублей");
+
+//Задача 2
+//Также бухгалтерия попросила найти минимальную и максимальную траты за неделю.
+//Напишите программу, которая решит эту задачу, и выведите в консоль результат в формате:
+//«Минимальная сумма трат за неделю составила … рублей. Максимальная сумма трат за неделю составила … рублей».
+
+        int maxPayment =-1;
+        int minPayment = 500_000;
+        for (int i = 0; i < payment.length; i++) {
+            if (payment[i] > maxPayment) {
+                maxPayment = payment[i];
+            }
         }
+        System.out.println(maxPayment);
+        for (int i =0; i<payment.length; i++){
+            if (payment[i]<minPayment) {
+                minPayment = payment[i];
+            }
+        }
+        System.out.println(minPayment);
+//Задача 3
+//Теперь бухгалтерия хочет понять, какую в среднем сумму компания тратила еженедельно.
+//Создайте массив с пятью целочисленными элементами и задайте каждому элементу значение.
+//Напишите программу, которая посчитает среднее значение трат за месяц (то есть сумму всех трат за месяц поделить на количество недель),
+//и выведите в консоль результат в формате: «Средняя сумма трат за месяц составила … рублей».
+//Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым, а дробным числом.
+        double mediumPayment = summ/4;
+        System.out.println("Средняя сумма трат за месяц составила "+mediumPayment+ " рублей");
+
+//Задача 4
+//В бухгалтерской книге появился баг. Что-то пошло не так: фамилии и имена сотрудников начали отображаться в обратную сторону.
+//Т. е. вместо «Иванов Иван» мы имеем «навИ вонавИ». Данные с именами сотрудников хранятся в виде массива символов
+//char[ ]
+//Напишите код, который развернет содержимое массива, а затем распечатает его содержимое.
+//В качестве данных для массива используйте:
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+for (int i = reverseFullName.length-1; i>=0;i--)
+    System.out.print(reverseFullName[i]);
     }
 }
